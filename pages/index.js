@@ -6,15 +6,7 @@ export default function Home({ movies }) {
   const router = useRouter();
   const onClick = (movie) => {
     const { id, original_title } = movie;
-    router.push(
-      {
-        pathname: `/movies/${id}`,
-        query: {
-          title: original_title,
-        },
-      },
-      `/movies/${id}`
-    );
+    router.push(`/movies/${original_title}/${id}`);
   };
   return (
     <div className="container">
